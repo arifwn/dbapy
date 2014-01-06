@@ -1,8 +1,11 @@
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 
+from app.users.sessions import UserSessionInterface
+
 app = Flask(__name__)
 app.config.from_object('config')
+app.session_interface = UserSessionInterface()
 
 db = SQLAlchemy(app)
 
