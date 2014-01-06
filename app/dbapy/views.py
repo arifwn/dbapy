@@ -9,4 +9,7 @@ mod = Blueprint('dbapy', __name__)
 @mod.route('/')
 @requires_login
 def home():
+    flash('test', 'info')
+    flash('test', 'warning')
+    flash('test', 'danger')
     return render_template("dbapy/index.html")
